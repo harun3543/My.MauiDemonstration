@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mycode="clr-namespace:MarkupExtension"
+             x:Class="MarkupExtension.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            
+            <Label
+                Text="Hello, World!"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" 
+                FontSize="20"/>
+
+            <Label
+                Text="Welcome to &#10;.NET Multi-platform App UI"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+
+            <Grid BackgroundColor="LightGrey" ColumnDefinitions="Auto,Auto,Auto,Auto,Auto">
+
+                <Button Text="Start"
+                        Margin="5,5,5,5"
+                        BackgroundColor="Green"
+                        Clicked="OnStart_Clicked"
+                        Grid.Column="0"/>
+
+
+                <ImageButton Source="C:\Users\MseOt\source\repos\left-arrow.png"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             Grid.Column="1"/>
+
+
+                <ImageButton Source="C:\Users\MseOt\source\repos\left-arrow.png"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             Grid.Column="2">
+
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale"
+                                            Value="1"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale"
+                                            Value="0.8"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="PoinerOver"/>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </ImageButton>
+        
+            </Grid>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
